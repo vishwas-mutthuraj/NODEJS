@@ -1,26 +1,8 @@
-// const { readFile } = require('fs')
+// console.log('Express tutorial');
+const http = require('http');
 
-// readFile('./content/first.txt', 'utf8', (err, data) => {
-//     if(err) {
-//         return
-//     } else {
-//         console.log(data);
-//     }
-// })
-
-const { readFile, writeFile } = require('fs').promises
-
-const start = async () => {
-    try {
-        const first = await readFile('./content/first.txt', 'utf8')
-        const second = await readFile('./content/second.txt', 'utf8')
-        await writeFile(
-            './content/result-mind-grenade.txt',
-            `This is Awesome: ${first} ${second}`
-        )
-        console.log(first,second);
-    } catch (error) {
-        console.log(error);
-    }
-}
-start()
+const server = http.createServer((req, res) => {
+    console.log('user hit the server');
+    res.end('home page')
+})
+server.listen(5000);
