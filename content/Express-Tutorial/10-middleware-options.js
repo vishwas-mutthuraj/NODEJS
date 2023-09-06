@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const logger = require('./Express-Tutorial/logger')
-const authorize = require('./Express-Tutorial/authorize')
+const logger = require('./logger')
+const authorize = require('./authorize')
 //  req => middleware => res
 
 // app.use([logger, authorize])
